@@ -25,14 +25,27 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-te-Slx">
-                                        <rect key="frame" x="300" y="44" width="0.0" height="556"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-te-Slx" userLabel="Map View Container">
+                                        <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7g7-JK-Td5" userLabel="Map View" customClass="GMSMapView">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="7g7-JK-Td5" secondAttribute="trailing" id="8hJ-bd-Rn1"/>
+                                            <constraint firstAttribute="bottom" secondItem="7g7-JK-Td5" secondAttribute="bottom" id="WfU-nX-MWH"/>
+                                            <constraint firstItem="7g7-JK-Td5" firstAttribute="leading" secondItem="qNR-te-Slx" secondAttribute="leading" id="jx6-3b-UIP"/>
+                                            <constraint firstItem="7g7-JK-Td5" firstAttribute="top" secondItem="qNR-te-Slx" secondAttribute="top" id="mGG-2B-JL1"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="2rs-pM-qDn" secondAttribute="trailing" id="G1Q-ru-olm"/>
                                     <constraint firstItem="2rs-pM-qDn" firstAttribute="leading" secondItem="RHX-vY-oW2" secondAttribute="leading" id="s6j-bT-fFC"/>
+                                    <constraint firstItem="qNR-te-Slx" firstAttribute="leading" secondItem="2rs-pM-qDn" secondAttribute="leading" id="xpN-mW-bA9"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -51,7 +64,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="qNR-te-Slx" id="rxI-6T-2Uo"/>
+                        <outlet property="mapView" destination="7g7-JK-Td5" id="xhX-iq-knN"/>
                         <outlet property="searchBar" destination="2rs-pM-qDn" id="vdY-1Q-ZAr"/>
                     </connections>
                 </viewController>
