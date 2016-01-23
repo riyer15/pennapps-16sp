@@ -14,9 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?)
+        -> Bool {
         
-        let filePath = NSBundle.mainBundle().pathForResource("api_keys", ofType: "plist")!
+        // Enable Google Maps SDK.
+        let filePath = NSBundle.mainBundle().pathForResource("api_keys",
+            ofType: "plist")!
         let dict = NSDictionary.init(contentsOfFile: filePath)!
         let googleMapsSdkApiKey = dict["google_maps_sdk"] as! String
         GMSServices.provideAPIKey(googleMapsSdkApiKey)
