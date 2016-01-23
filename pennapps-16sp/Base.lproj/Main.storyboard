@@ -24,6 +24,9 @@
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2rs-pM-qDn">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="EM9-fU-2fk"/>
+                                        </connections>
                                     </searchBar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-te-Slx" userLabel="Map View Container">
                                         <rect key="frame" x="0.0" y="44" width="600" height="556"/>
