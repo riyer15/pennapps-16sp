@@ -16,19 +16,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         let camera = GMSCameraPosition.cameraWithLatitude(-33.86,
             longitude: 151.20, zoom: 6)
-        let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
-        mapView.myLocationEnabled = true
-        self.mapView = mapView
+        let mV = GMSMapView.mapWithFrame(self.mapView.frame,
+            camera: camera)
+        mV.myLocationEnabled = true
+        self.mapView = mV
         
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
         marker.title = "Sydney"
         marker.snippet = "Australia"
-        marker.map = mapView
+        marker.map = mV
     }
 
     override func didReceiveMemoryWarning() {

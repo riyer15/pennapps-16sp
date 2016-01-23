@@ -51,6 +51,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="qNR-te-Slx" id="rxI-6T-2Uo"/>
                         <outlet property="searchBar" destination="2rs-pM-qDn" id="vdY-1Q-ZAr"/>
                     </connections>
                 </viewController>
