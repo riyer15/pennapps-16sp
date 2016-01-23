@@ -73,10 +73,13 @@ class ViewController: UIViewController {
 extension ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        let text = searchBar.text
+        let text = searchBar.text!
         
         // Easter egg: Convert base-10 numbers to LOL.
-        if let number = Int(text!) {
+        let regex = try! NSRegularExpression(pattern: "\\d+ lol", options: NSRegularExpressionOptions.CaseInsensitive)
+        let match = regex.firstMatchInString(text, options: [], range: NSMakeRange(0, text.characters.count))
+        if match != nil {
+            let number = Int(text.stringByReplacingOccurrencesOfString(" lol", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch))!
             showBinaryAlert(number)
         }
     }
