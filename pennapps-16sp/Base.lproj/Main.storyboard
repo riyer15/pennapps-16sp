@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -10,14 +11,32 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pennapps_16sp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="eSd-My-5oj"/>
+                        <viewControllerLayoutGuide type="bottom" id="OhV-G0-6Xy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="RXr-Mq-Jd5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2rs-pM-qDn">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-te-Slx">
+                                <rect key="frame" x="164" y="244" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="2rs-pM-qDn" secondAttribute="trailing" constant="-20" id="Cf4-VO-dTk"/>
+                            <constraint firstItem="2rs-pM-qDn" firstAttribute="top" secondItem="eSd-My-5oj" secondAttribute="bottom" constant="8" id="DzD-JM-w5t"/>
+                            <constraint firstItem="2rs-pM-qDn" firstAttribute="leading" secondItem="RXr-Mq-Jd5" secondAttribute="leadingMargin" constant="-20" id="JsR-GN-nBd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="2rs-pM-qDn" id="vdY-1Q-ZAr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

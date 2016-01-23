@@ -11,6 +11,9 @@ import GoogleMaps
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var mapView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +22,7 @@ class ViewController: UIViewController {
             longitude: 151.20, zoom: 6)
         let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
         mapView.myLocationEnabled = true
-        self.view = mapView
+        self.mapView = mapView
         
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
