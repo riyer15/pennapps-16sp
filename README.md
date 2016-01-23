@@ -1,3 +1,5 @@
+# Setup 
+
 1. If you don't already have the CocoaPods tool, install it on OS X by running the following command from the terminal.
 
 	```
