@@ -43,7 +43,19 @@ class ViewController: UIViewController {
 extension ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        print("Search button clicked")
+        let text = searchBar.text
+        if let number = Int(text!) {
+            showBinaryAlert(number)
+        }
+        else {
+            print("value: \(text) is not a valid  number.")
+        }
+    }
+    
+    func showBinaryAlert(number: Int) {
+        let alert = UIAlertController(title: "LOL", message: String(number, radix: 2).stringByReplacingOccurrencesOfString("1", withString:"L").stringByReplacingOccurrencesOfString("0", withString:"O") , preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Exit", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
 
