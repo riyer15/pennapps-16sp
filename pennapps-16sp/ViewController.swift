@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: GMSMapView!
     
+    // Array to hold Google Maps markers.
+    var markers: Array<GMSMarker> = Array<GMSMarker>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +30,8 @@ class ViewController: UIViewController {
         marker.title = "Sydney"
         marker.snippet = "Australia"
         marker.map = self.mapView
+        
+        markers.append(marker)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,8 +41,9 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UISearchBarDelegate {
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        print("text changed")
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        print("Search button clicked")
     }
 }
 
