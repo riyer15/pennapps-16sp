@@ -1,8 +1,8 @@
 1. If you don't already have the CocoaPods tool, install it on OS X by running the following command from the terminal.
 
-```
-$ sudo gem install cocoapods
-```
+	```
+	$ sudo gem install cocoapods
+	```
 
 2. Open a terminal and go to the directory containing the `Podfile`:
 
