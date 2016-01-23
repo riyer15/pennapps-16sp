@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RHX-vY-oW2">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="620"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2rs-pM-qDn">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="570"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-te-Slx">
-                                        <rect key="frame" x="275" y="570" width="50" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-te-Slx">
+                                        <rect key="frame" x="300" y="44" width="0.0" height="556"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -42,7 +42,7 @@
                             <constraint firstItem="OhV-G0-6Xy" firstAttribute="top" secondItem="RHX-vY-oW2" secondAttribute="bottom" constant="-20" id="Bhi-wp-jJK"/>
                             <constraint firstItem="RHX-vY-oW2" firstAttribute="leading" secondItem="RXr-Mq-Jd5" secondAttribute="leadingMargin" constant="-20" id="Bys-wU-fL3"/>
                             <constraint firstItem="OhV-G0-6Xy" firstAttribute="top" secondItem="RHX-vY-oW2" secondAttribute="bottom" constant="400" id="Xqg-fF-Has"/>
-                            <constraint firstItem="RHX-vY-oW2" firstAttribute="top" secondItem="eSd-My-5oj" secondAttribute="bottom" constant="-20" id="fCh-j7-AaH"/>
+                            <constraint firstItem="RHX-vY-oW2" firstAttribute="top" secondItem="eSd-My-5oj" secondAttribute="bottom" id="fCh-j7-AaH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
