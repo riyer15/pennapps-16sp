@@ -22,3 +22,8 @@ have.
 4. Close Xcode, and then open (double-click) your project's `.xcworkspace` file to launch Xcode. From this time onwards, you 
 must use the `.xcworkspace` file to open the project.
 
+5. Create a new plist ([property list](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html)) file called `api_keys.plist` in `pennapps-16sp`: 
+
+	File > New > File... > OS X / Resource > Property List
+	
+6. In `api_keys.plist`, create a new key-value pair under the Root. The key should be `google_maps_sdk`, and the value should be of type String. Ask Veronica for the API key. 
