@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         let lat = 40.0049314
         let long = -75.2581173
         
+        // Center the camera in Philadelphia.
         let camera = GMSCameraPosition.cameraWithLatitude(lat, longitude: long,
             zoom: 6)
         self.mapView.camera = camera
@@ -73,17 +74,26 @@ extension ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         let text = searchBar.text
+        
+        // Easter egg: Convert base-10 numbers to LOL.
         if let number = Int(text!) {
             showBinaryAlert(number)
         }
-        else {
-            print("value: \(text) is not a valid  number.")
-        }
     }
     
+    /**
+        Helper method to diplay the LOL equivalent of a base-10 number.
+     
+        @param number The base-10 number to convert to LOL.
+    */
     func showBinaryAlert(number: Int) {
-        let alert = UIAlertController(title: "LOL", message: String(number, radix: 2).stringByReplacingOccurrencesOfString("1", withString:"L").stringByReplacingOccurrencesOfString("0", withString:"O") , preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Exit", style: UIAlertActionStyle.Default, handler: nil))
+        let message = String(number, radix: 2)
+            .stringByReplacingOccurrencesOfString("1", withString:"L")
+            .stringByReplacingOccurrencesOfString("0", withString:"O")
+        let alert = UIAlertController(title: "LOL", message: message,
+            preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Exit",
+            style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
 }
