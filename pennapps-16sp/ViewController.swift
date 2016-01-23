@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: GMSMapView!
     
+    var searchResultController: SearchResultsController!
+    var resultsArray = [String]()
+    
     var locationManager = CLLocationManager()
     var didFindMyLocation = false
     
@@ -46,6 +49,9 @@ class ViewController: UIViewController {
         marker.map = self.mapView
         
         markers.append(marker)
+        
+        searchResultController = SearchResultsController()
+        searchResultController.delegate = self
     }
     
     override func observeValueForKeyPath(keyPath: String?,
@@ -71,6 +77,24 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UISearchBarDelegate {
+    
+    func searchBar(searchBar: UISearchBar,
+        textDidChange searchText: String){
+            
+            let placesClient = GMSPlacesClient()
+            placesClient.autocompleteQuery(searchText, bounds: nil, filter: nil) { (results, error:NSError?) -> Void in
+                self.resultsArray.removeAll()
+                if results == nil {
+                    return
+                }
+                for result in results!{
+                    if let result = result as? GMSAutocompletePrediction{
+                        self.resultsArray.append(result.attributedFullText.string)
+                    }
+                }
+                self.searchResultController.reloadDataWithArray(self.resultsArray)
+            }
+    }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         let text = searchBar.text
@@ -104,6 +128,22 @@ extension ViewController: CLLocationManagerDelegate {
         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.AuthorizedWhenInUse {
             self.mapView.myLocationEnabled = true
+        }
+    }
+}
+
+extension ViewController: LocateOnTheMap {
+    func locateWithLongitude(lon: Double, andLatitude lat: Double, andTitle title: String) {
+        
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            let position = CLLocationCoordinate2DMake(lat, lon)
+            let marker = GMSMarker(position: position)
+            
+            let camera  = GMSCameraPosition.cameraWithLatitude(lat, longitude: lon, zoom: 10)
+            self.mapView.camera = camera
+            
+            marker.title = title
+            marker.map = self.mapView
         }
     }
 }

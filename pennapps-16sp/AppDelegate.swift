@@ -18,12 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?)
         -> Bool {
         
-        // Enable Google Maps SDK.
         let filePath = NSBundle.mainBundle().pathForResource("api_keys",
             ofType: "plist")!
         let dict = NSDictionary.init(contentsOfFile: filePath)!
+            
+        // Enable Google Maps SDK.
         let googleMapsSdkApiKey = dict["google_maps_sdk"] as! String
-        GMSServices.provideAPIKey(googleMapsSdkApiKey)
+        //GMSServices.provideAPIKey(googleMapsSdkApiKey)
+            
+        // Enable Google Places SDK.
+        let googlePlacesApiKey = dict["google_places_api"] as! String
+        GMSServices.provideAPIKey(googlePlacesApiKey)
         
         return true
     }
