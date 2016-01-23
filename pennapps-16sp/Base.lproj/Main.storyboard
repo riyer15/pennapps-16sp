@@ -18,21 +18,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2rs-pM-qDn">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-te-Slx">
-                                <rect key="frame" x="164" y="244" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RHX-vY-oW2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="620"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2rs-pM-qDn">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="570"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNR-te-Slx">
+                                        <rect key="frame" x="275" y="570" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2rs-pM-qDn" secondAttribute="trailing" id="G1Q-ru-olm"/>
+                                    <constraint firstItem="2rs-pM-qDn" firstAttribute="leading" secondItem="RHX-vY-oW2" secondAttribute="leading" id="s6j-bT-fFC"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="2rs-pM-qDn" secondAttribute="trailing" constant="-20" id="Cf4-VO-dTk"/>
-                            <constraint firstItem="2rs-pM-qDn" firstAttribute="top" secondItem="eSd-My-5oj" secondAttribute="bottom" constant="8" id="DzD-JM-w5t"/>
-                            <constraint firstItem="2rs-pM-qDn" firstAttribute="leading" secondItem="RXr-Mq-Jd5" secondAttribute="leadingMargin" constant="-20" id="JsR-GN-nBd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RHX-vY-oW2" secondAttribute="trailing" constant="-20" id="5Cy-iL-BjQ"/>
+                            <constraint firstItem="OhV-G0-6Xy" firstAttribute="top" secondItem="RHX-vY-oW2" secondAttribute="bottom" constant="-20" id="Bhi-wp-jJK"/>
+                            <constraint firstItem="RHX-vY-oW2" firstAttribute="leading" secondItem="RXr-Mq-Jd5" secondAttribute="leadingMargin" constant="-20" id="Bys-wU-fL3"/>
+                            <constraint firstItem="OhV-G0-6Xy" firstAttribute="top" secondItem="RHX-vY-oW2" secondAttribute="bottom" constant="400" id="Xqg-fF-Has"/>
+                            <constraint firstItem="RHX-vY-oW2" firstAttribute="top" secondItem="eSd-My-5oj" secondAttribute="bottom" constant="-20" id="fCh-j7-AaH"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Xqg-fF-Has"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="2rs-pM-qDn" id="vdY-1Q-ZAr"/>
