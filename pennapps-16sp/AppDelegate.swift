@@ -15,9 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         
-        GMSServices.provideAPIKey("AIzaSyBTLNpivq4mEX65eGvLjFwUGHmpLbvhppo")
+        let filePath = NSBundle.mainBundle().pathForResource("api_keys", ofType: "plist")!
+        let dict = NSDictionary.init(contentsOfFile: filePath)!
+        let googleMapsSdkApiKey = dict["google_maps_sdk"] as! String
+        GMSServices.provideAPIKey(googleMapsSdkApiKey)
         
         return true
     }

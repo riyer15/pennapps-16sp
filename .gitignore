@@ -61,3 +61,5 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
+
+pennapps-16sp/api_keys.plist

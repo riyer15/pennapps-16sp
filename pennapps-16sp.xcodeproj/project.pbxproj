@@ -14,6 +14,7 @@
 		863B1C131C53340400E6BECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863B1C121C53340400E6BECC /* Assets.xcassets */; };
 		863B1C161C53340400E6BECC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863B1C141C53340400E6BECC /* LaunchScreen.storyboard */; };
 		863B1C211C53340400E6BECC /* pennapps_16spTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B1C201C53340400E6BECC /* pennapps_16spTests.swift */; };
+		863B1C2C1C53F8C300E6BECC /* api_keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 863B1C2B1C53F8C200E6BECC /* api_keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		863B1C1C1C53340400E6BECC /* pennapps-16spTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pennapps-16spTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		863B1C201C53340400E6BECC /* pennapps_16spTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pennapps_16spTests.swift; sourceTree = "<group>"; };
 		863B1C221C53340400E6BECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		863B1C2B1C53F8C200E6BECC /* api_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = api_keys.plist; sourceTree = "<group>"; };
 		A3517B5FDF77136418432E61 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2D1F23F85A047A78667F3E4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 		863B1C0A1C53340400E6BECC /* pennapps-16sp */ = {
 			isa = PBXGroup;
 			children = (
+				863B1C2B1C53F8C200E6BECC /* api_keys.plist */,
 				863B1C0B1C53340400E6BECC /* AppDelegate.swift */,
 				863B1C0D1C53340400E6BECC /* ViewController.swift */,
 				863B1C0F1C53340400E6BECC /* Main.storyboard */,
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				863B1C161C53340400E6BECC /* LaunchScreen.storyboard in Resources */,
+				863B1C2C1C53F8C300E6BECC /* api_keys.plist in Resources */,
 				863B1C131C53340400E6BECC /* Assets.xcassets in Resources */,
 				863B1C111C53340400E6BECC /* Main.storyboard in Resources */,
 			);
